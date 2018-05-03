@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="test" dbms="mysql">
+  <table name="testTable">
+    <column name="a">
+      <type name="int" nullable="false" defaultValue="a"/>
+    </column>
+  </table>
+</database>
