@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="test" dbms="mysql">
-  <table name="testTable">
+  <table name="testTable" idColumnName="s" rows="1000">
     <column name="a">
-      <type name="int" nullable="false" defaultValue="a"/>
+      <type name="char" handler="com.gendb.handler.impl.StringHandler" length="10"/>
     </column>
   </table>
 </database>
