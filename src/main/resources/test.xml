@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="test" dbms="mysql">
   <table name="testTable" idColumnName="s" rows="1000">
-    <column name="a">
-      <type name="char" handler="com.gendb.handler.impl.StringHandler" length="10"/>
+    <column name="dates">
+      <type name="date" handler="com.gendb.handler.impl.DateHandler" length="10"/>
+    </column>
+    <column name="timestamps">
+      <type name="timestamp" handler="com.gendb.handler.impl.TimestampHandler" length="10"/>
+    </column>
+    <column name="varchars">
+      <type name="varchar" handler="com.gendb.handler.impl.StringHandler"/>
     </column>
   </table>
 </database>
