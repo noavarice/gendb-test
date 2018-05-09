@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<database name="test" dbms="mysql">
-  <table name="testTable" idColumnName="s" rows="1000">
+<database name="test" dbms="postgres">
+  <table name="testTable" idColumnName="s" rows="100000">
     <column name="dates">
-      <type name="date" handler="com.gendb.handler.impl.DateHandler" length="10"/>
+      <type name="date"/>
     </column>
-    <column name="timestamps">
-      <type name="timestamp" handler="com.gendb.handler.impl.TimestampHandler" length="10"/>
+    <column name="timestaps-yopta">
+      <type name="timestamp"/>
     </column>
     <column name="varchars">
-      <type name="varchar" handler="com.gendb.handler.impl.StringHandler"/>
+      <type name="varchar"/>
     </column>
   </table>
 </database>
