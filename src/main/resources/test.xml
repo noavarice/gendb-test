@@ -10,5 +10,8 @@
     <column name="varchars">
       <type name="varchar" length="12"/>
     </column>
+    <column name="shorts">
+      <type name="smallint" unsigned="true" min="10" max="200"/>
+    </column>
   </table>
 </database>
