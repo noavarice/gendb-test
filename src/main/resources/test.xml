@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="test" dbms="mysql">
-  <table name="t" idColumnName="s" rows="100">
+  <table name="t" idColumnName="s" rows="100000">
     <column name="c1">
       <type name="int" min="100" max="300"/>
+    </column>
+    <column name="c3">
+      <type name="char" length="10"/>
+    </column>
+    <column name="c4">
+      <type name="int" unsigned="true" min="100" max="300"/>
     </column>
     <column name="c2">
       <type name="int" unsigned="true" min="100" max="200"/>
@@ -10,6 +16,10 @@
     <valueOrder>
       <column>c2</column>
       <column>c1</column>
+    </valueOrder>
+    <valueOrder>
+      <column>c2</column>
+      <column>c4</column>
     </valueOrder>
   </table>
 </database>
