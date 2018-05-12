@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="test" dbms="mysql">
-  <table name="table1" idColumnName="s" rows="100000">
-    <column name="dates">
-      <type name="date"/>
+  <table name="t" idColumnName="s" rows="100">
+    <column name="c1">
+      <type name="int" min="100" max="300"/>
     </column>
-    <column name="timestamps">
-      <type name="timestamp"/>
+    <column name="c2">
+      <type name="int" unsigned="true" min="100" max="200"/>
     </column>
-    <column name="varchars">
-      <type name="varchar" length="12"/>
-    </column>
-    <column name="shorts">
-      <type name="smallint" unsigned="true" min="10" max="200"/>
-    </column>
-    <foreignKey references="table2"/>
-  </table>
-  <table name="table2" rows="10">
-    <column name="shorts">
-      <type name="smallint" unsigned="true" min="10" max="200"/>
-    </column>
-    <foreignKey references="table3"/>
-  </table>
-  <table name="table3" rows="10">
-    <column name="shorts">
-      <type name="smallint" unsigned="true" min="10" max="200"/>
-    </column>
+    <valueOrder>
+      <column>c2</column>
+      <column>c1</column>
+    </valueOrder>
   </table>
 </database>
