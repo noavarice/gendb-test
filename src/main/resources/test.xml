@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="test" dbms="mysql">
-  <table name="t" idColumnName="s" rows="100000">
+  <table name="t" idColumnName="s" rows="10000">
     <column name="c1">
+      <type name="int" min="100" max="300"/>
+    </column>
+    <column name="c2">
       <type name="int" min="100" max="300"/>
     </column>
     <column name="c3">
       <type name="char" length="10"/>
     </column>
-    <column name="c4">
-      <type name="int" unsigned="true" min="100" max="300"/>
+    <column name="ts1">
+      <type name="timestamp"/>
     </column>
-    <column name="c2">
-      <type name="int" unsigned="true" min="100" max="200"/>
+    <column name="ts2">
+      <type name="timestamp"/>
+    </column>
+    <column name="d1">
+      <type name="date"/>
+    </column>
+    <column name="d2">
+      <type name="date"/>
     </column>
     <valueOrder>
       <column>c2</column>
       <column>c1</column>
     </valueOrder>
     <valueOrder>
-      <column>c2</column>
-      <column>c4</column>
+      <column>ts2</column>
+      <column>ts1</column>
+    </valueOrder>
+    <valueOrder>
+      <column>d2</column>
+      <column>d1</column>
     </valueOrder>
   </table>
 </database>
