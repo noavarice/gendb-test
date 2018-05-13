@@ -1,45 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<database name="test" dbms="mysql">
-  <table name="t" idColumnName="s" rows="10000">
-    <column name="c1">
-      <type name="int" min="100" max="300"/>
+<database name="island_gendb" dbms="postgres">
+  <table name="people" idColumnName="people_id" rows="200000">
+    <column name="name">
+      <type name="varchar" length="64"/>
     </column>
-    <column name="c2">
-      <type name="int" min="100" max="300"/>
-    </column>
-    <column name="c3">
-      <type name="char" length="10"/>
-    </column>
-    <column name="ts1">
+    <column name="birth_day">
       <type name="timestamp"/>
     </column>
-    <column name="ts2">
+    <column name="death_day">
       <type name="timestamp"/>
     </column>
-    <column name="d1">
-      <type name="date"/>
+    <column name="sex">
+      <type name="char"/>
     </column>
-    <column name="d2">
-      <type name="date"/>
-    </column>
-    <foreignKey references="t" columnName="test1"/>
+    <foreignKey references="people" columnName="mother_people_id"/>
+    <foreignKey references="people" columnName="father_people_id"/>
     <valueOrder>
-      <column>c2</column>
-      <column>c1</column>
-    </valueOrder>
-    <valueOrder>
-      <column>ts2</column>
-      <column>ts1</column>
-    </valueOrder>
-    <valueOrder>
-      <column>d2</column>
-      <column>d1</column>
+      <column>birth_day</column>
+      <column>death_day</column>
     </valueOrder>
   </table>
-  <table name="t1" rows="10000">
-    <column name="c1">
-      <type name="int" min="100" max="300"/>
+
+  <table name="businessman" rows="5000">
+    <column name="start_day">
+      <type name="date"/>
     </column>
-    <foreignKey references="t" columnName="fk_t1"/>
+    <column name="finish_day">
+      <type name="date"/>
+    </column>
+    <foreignKey references="people" columnName="bman_id"/>
+    <foreignKey references="jobs" columnName="jobs_id"/>
+    <valueOrder>
+      <column>start_day</column>
+      <column>finish_day</column>
+    </valueOrder>
+  </table>
+
+  <table name="jobs" idColumnName="jobs_id" rows="10">
+    <column name="title">
+      <type name="varchar" length="64"/>
+    </column>
+    <column name="finish_day">
+      <type name="varchar" length="2000"/>
+    </column>
+  </table>
+
+  <table name="contracts" rows="12000">
+    <column name="start_day">
+      <type name="timestamp"/>
+    </column>
+    <column name="finish_day">
+      <type name="timestamp"/>
+    </column>
+    <foreignKey references="businessman" columnName="bman_id"/>
+    <foreignKey references="people" columnName="people_id"/>
+    <valueOrder>
+      <column>start_day</column>
+      <column>finish_day</column>
+    </valueOrder>
+  </table>
+
+  <table name="lives" rows="120000">
+    <column name="start_day">
+      <type name="timestamp"/>
+    </column>
+    <column name="finish_day">
+      <type name="timestamp"/>
+    </column>
+    <foreignKey references="houses" columnName="house_id"/>
+    <foreignKey references="people" columnName="people_id"/>
+    <valueOrder>
+      <column>start_day</column>
+      <column>finish_day</column>
+    </valueOrder>
+  </table>
+
+  <table name="houses" idColumnName="house_id" rows="50000">
+    <column name="address">
+      <type name="varchar" length="128"/>
+    </column>
+    <column name="description">
+      <type name="varchar" length="256"/>
+    </column>
+    <column name="build_day">
+      <type name="timestamp"/>
+    </column>
+    <column name="destroy_day">
+      <type name="timestamp"/>
+    </column>
+    <valueOrder>
+      <column>build_day</column>
+      <column>destroy_day</column>
+    </valueOrder>
+  </table>
+
+  <table name="company_pays" rows="50000">
+    <column name="share_count">
+      <type name="int" min="0" max="100"/>
+    </column>
+    <column name="start_day">
+      <type name="date"/>
+    </column>
+    <column name="finish_day">
+      <type name="date"/>
+    </column>
+    <foreignKey references="companies" columnName="company_id"/>
+    <foreignKey references="people" columnName="people_id"/>
+    <valueOrder>
+      <column>start_day</column>
+      <column>finish_day</column>
+    </valueOrder>
+  </table>
+
+  <table name="companies" idColumnName="company_id" rows="12000">
+    <column name="title">
+      <type name="varchar" length="64"/>
+    </column>
+    <column name="description">
+      <type name="varchar" length="2000"/>
+    </column>
+    <column name="found_day">
+      <type name="timestamp"/>
+    </column>
+    <column name="close_day">
+      <type name="timestamp"/>
+    </column>
+    <valueOrder>
+      <column>found_day</column>
+      <column>close_day</column>
+    </valueOrder>
   </table>
 </database>
