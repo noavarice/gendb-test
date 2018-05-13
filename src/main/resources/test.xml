@@ -22,6 +22,7 @@
     <column name="d2">
       <type name="date"/>
     </column>
+    <foreignKey references="t" columnName="test1"/>
     <valueOrder>
       <column>c2</column>
       <column>c1</column>
@@ -34,5 +35,11 @@
       <column>d2</column>
       <column>d1</column>
     </valueOrder>
+  </table>
+  <table name="t1" rows="10000">
+    <column name="c1">
+      <type name="int" min="100" max="300"/>
+    </column>
+    <foreignKey references="t" columnName="fk_t1"/>
   </table>
 </database>
