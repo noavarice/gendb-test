@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<database name="island_gendb" dbms="postgres">
+<database name="island_gendb" dbms="mysql" batchSize="10000">
   <table name="people" idColumnName="people_id" rows="200000">
     <column name="name">
       <type name="varchar" length="64"/>
@@ -38,9 +38,9 @@
 
   <table name="jobs" idColumnName="jobs_id" rows="10">
     <column name="title">
-      <type name="varchar" length="64"/>
+      <type name="varchar" length="64" dictionary="/home/alexrazinkov/resources/jobs.txt" sequential="true"/>
     </column>
-    <column name="finish_day">
+    <column name="description">
       <type name="varchar" length="2000"/>
     </column>
   </table>
