@@ -13,7 +13,7 @@ public class Main {
   public static void main(String[] args) throws IOException, URISyntaxException {
     final ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
     final Validator v = factory.getValidator();
-    Generator g = new Generator(Paths.get(ClassLoader.getSystemResource("test.xml").toURI()), v);
+    Generator g = new Generator(Paths.get(ClassLoader.getSystemResource("test1.xml").toURI()), v);
     g.createScript(Paths.get("/home/alexrazinkov/resources/test.sql"), true);
   }
 }

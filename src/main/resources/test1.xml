@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="db" dbms="mysql">
+  <table name="t" rows="1000">
+    <column name="col">
+      <type name="int"/>
+      <distribution>
+        <firstPoint>-100</firstPoint>
+        <next point="100" percentage="50"/>
+        <next point="2000" percentage="50"/>
+      </distribution>
+    </column>
+  </table>
+</database>
