@@ -17,6 +17,7 @@ ext {
     elVersion = "3.0.0"
     log4jVersion = "2.11.0"
     mysqlVersion = "5.1.13"
+    postgresVersion = "9.1-901-1.jdbc4"
 }
 
 dependencies {
@@ -25,6 +26,7 @@ dependencies {
     runtime "org.glassfish:javax.el:$elVersion"
     runtime "org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion"
     runtime "mysql:mysql-connector-java:$mysqlVersion"
+    runtime "postgresql:postgresql:$postgresVersion"
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

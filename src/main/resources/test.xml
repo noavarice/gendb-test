@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<database name="island_gendb" dbms="mysql" batchSize="10000">
+<database dbms="postgres" batchSize="10000">
   <table name="people" idColumnName="people_id" rows="200000">
     <column name="name">
       <type name="varchar" length="64"/>
